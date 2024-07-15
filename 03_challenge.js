@@ -36,7 +36,6 @@ function largest(a, b, c) {
 
 largest(2, 3, 1)
 
-
 // Activity 3:
 // Task 4:
 
