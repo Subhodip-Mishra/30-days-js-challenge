@@ -1,7 +1,6 @@
 // Activity 1:
 // Task 1:
 let num = 1
-
 if (0 < num) {
     console.log("Number is positive")
 } else if (num == 0) {
@@ -15,7 +14,6 @@ let age = 18
 if (18 <= age) {
     console.log('You are eligible for vote')
 }
-
 // Activity 2:
 // Task: 3
 function largest(a, b, c) {
@@ -103,11 +101,11 @@ checknumber % 2 === 0 ? console.log('Even') : console.log("Odd")
 
 // Activity 5:
 // Task 7:
-function isLeapYear(year){
-    if(year % 100 === 0 ? year % 400 === 0 : year % 4 === 0){
+function isLeapYear(year) {
+    if (year % 100 === 0 ? year % 400 === 0 : year % 4 === 0) {
         console.log("Input year: " + year, "is a leap year");
-    }else{
-        console.log("Input year: " , year, 'this is not leap year')
+    } else {
+        console.log("Input year: ", year, 'this is not leap year')
     }
 }
 isLeapYear(2024)
