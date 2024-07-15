@@ -9,7 +9,6 @@ if (0 < num) {
     console.log('Number is negative')
 }
 // Task 2:
-
 let age = 18
 if (18 <= age) {
     console.log('You are eligible for vote')
