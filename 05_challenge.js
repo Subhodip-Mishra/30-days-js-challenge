@@ -69,4 +69,4 @@ let func1 = (num) => {
 let func2 = (num) => {
   return num * num;
 };
-console.log(higherOrderFunc(func1, func2, 5));
+console.log(higherOrderFunc(func1, func2, 3));
