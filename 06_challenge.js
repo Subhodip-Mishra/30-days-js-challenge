@@ -78,6 +78,7 @@ let arr2d = [[1, 2, 3], [4, 6, 7], [8, 9, 10]];
 for (let i = 0; i < arr2d.length; i++) {
     console.log(arr2d[i]);
 }
+
 console.log("\n")
 
 // Task 13:
