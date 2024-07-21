@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Challenge</title>
+    <style>
+        .background {
+            background-color: green;
+        }
+
+        .button {
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            border: none;
+            background-color: darkturquoise;
+            color: white;
+        }
+
+        .text2 {
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            border: none;
+            background-color: darkturquoise;
+            color: white;
+        }
+
+        .text {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        #myElement {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text1" class="background">
+        hello
+    </div>
+
+    <div id="mydiv">
+        <p>hello</p>
+        <p>This is js challenge</p>
+    </div>
+
+    <ul id="list">
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+
+    <div id="text2">
+        <p>This is first text</p>
+        <p>This is second text</p>
+        <p>This is third text</p>
+
+    </div>
+
+    <button class="button" id="removeButton">Remove Element</button>
+
+    <button id="last" class="text2">Remove Last child</button>
+
+
+    <div class="image">
+        <img src="download.jpg" id="myImg" alt="flower">
+        <button id="changeImageButton">Change Image</button>
+    </div>
+
+    <div id="element" class="text">Hello, world</div>
+    <button id="addclasssButton">Add Class</button>
+    <button id="removeclassButton">Remove Class</button>
+
+
+
+    <button id="changetext">change text</button>
+    <p id="textchange">this is a text</p>
+    <div id="myElement">Hover over me!</div>
+
+    <script>
+        document.getElementById("text1").innerHTML = "Chai aur code";
+
+        const text = document.getElementById("mydiv");
+        text.textContent += ' this is also text';
+        let list = document.getElementById("list"); // Get the ul element
+        let newList = document.createElement("li");
+        newList.textContent = "text content"; // Corrected property
+        list.appendChild(newList); // Append to the ul element
+
+        function removeElement() {
+            let elementToRemove = document.getElementById('mydiv')
+
+            if (elementToRemove) {
+                elementToRemove.remove(); // This will remove the div element with id mydiv
+            }
+        }
+
+        document.getElementById("removeButton").addEventListener("click", removeElement);
+
+        let child = document.getElementById('last').addEventListener('click', function () {
+            let parantDiv = document.getElementById('text2')
+            if (parantDiv.lastElementChild) {
+                parantDiv.lastElementChild.remove();
+            }
+        })
+
+
+        document.getElementById('changeImageButton').addEventListener('click', function () {
+            const img = document.getElementById('myImg')
+            img.src = 'new.jpg'
+        })
+
+        const element = document.getElementById('element')
+        const addClasssButton = document.getElementById('addclasssButton')
+        const removeClasssButton = document.getElementById('removeclassButton')
+
+        addClasssButton.addEventListener('click', function () {
+            element.classList.add('highlight')
+        })
+
+        removeClasssButton.addEventListener('click', function () {
+            element.classList.remove('highlight')
+        })
+
+
+        document.getElementById('changetext').addEventListener('click', function () {
+            const textchange = document.getElementById('textchange')
+            textchange.textContent = `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eaque quaerat tenetur officiis architecto? Reprehenderit sint et soluta ea. Eveniet doloremque omnis hic!`
+        })
+
+        const element1 = document.getElementById('myElement');
+
+        element1.addEventListener('mouseover', function(){
+            element1.style.borderColor = 'red';
+        } )
+
+        element1.addEventListener('mouseout', function(){
+            element1.style.borderColor = 'black'
+        })
+
+
+    </script>
+</body>
+
+</html>
