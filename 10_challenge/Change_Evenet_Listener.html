@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Change Listener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #selectedValue {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <label for="dropdown">Choose an option:</label>
+    <select id="dropdown">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+        <option value="Option 4">Option 4</option>
+    </select>
+
+    <p id="selectedValue">Selected value will be displayed here</p>
+
+    <script>
+        document.getElementById('dropdown').addEventListener('change', function() {
+            let selectedValue = this.value;
+            document.getElementById('selectedValue').innerText = 'Selected value: ' + selectedValue;
+        });
+    </script>
+</body>
+</html>

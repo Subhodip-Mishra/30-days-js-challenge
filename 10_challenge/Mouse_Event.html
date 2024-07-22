@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mous Event</title>
+</head>
+
+<body>
+    <div>
+        <p id='text'>Hover me</p>
+    </div>
+
+    <script>
+         document.getElementById('text').addEventListener('mouseover', function () {
+            const background = document.getElementById('text')
+            background.style.backgroundColor = 'orange'    
+        })
+
+        document.getElementById('text').addEventListener('mouseout', function () {
+            const background = document.getElementById('text')
+            background.style.backgroundColor = 'white'    
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Event Delegation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+        li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <button id="addItem">Add Item</button>
+    <ul id="itemList">
+        <!-- Dynamic items will be added here -->
+    </ul>
+
+    <script>
+        const itemList = document.getElementById('itemList');
+
+        function handleItemClick(event) {
+            if (event.target && event.target.nodeName === 'LI') {
+                console.log('Clicked item text: ' + event.target.textContent);
+            }
+        }
+
+        itemList.addEventListener('click', handleItemClick);
+
+        const addItemButton = document.getElementById('addItem');
+
+        function addItem() {
+            const newItem = document.createElement('li');
+            newItem.textContent = 'Item ' + (itemList.children.length + 1);
+            itemList.appendChild(newItem);
+        }
+
+        addItemButton.addEventListener('click', addItem);
+    </script>
+</body>
+</html>
