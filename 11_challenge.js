@@ -5,22 +5,18 @@ const newPromise = new Promise((resolve, reject) => {
         resolve("Promise resolved successfully!");
     }, 2000);
 })
-
 newPromise.then((res) =>{
     console.log(res)
 }).catch((e)=> console.log(e))
-
 // Task 2:
 const anotherPromise = new Promise((res, reject) => {
     setTimeout(() => {
         reject("This promise was rejected!")
     }, 2000);
 })
-
 anotherPromise.then((res, rej) => {
     console.log(rej)
 }).catch((error) => console.log(error))
-
 // Activity 2: 
 // Task 3:
 function fetchData(message, delay){
@@ -30,7 +26,6 @@ function fetchData(message, delay){
         }, 2000);
     })
 }
-
 fetchData("Fetching data from server...", 2000)
 .then((message) => {
     console.log(message)
@@ -39,10 +34,7 @@ fetchData("Fetching data from server...", 2000)
     console.log(message)
     return fetchData("Fetching users...", 500)
 })
-
 console.log("\n")
-
-
 // Activity 3:
 // Task 4:
 const async_function = async() =>{ 
@@ -59,9 +51,7 @@ const async_function = async() =>{
         console.log(error)
     }
 }
-
 async_function()
-
 // Task 5:
 const async_reject = async() => {
     const promise = new Promise((res, rej) => {
@@ -78,7 +68,6 @@ const async_reject = async() => {
     }
 }
 async_reject()
-
 // Activity 4:
 // Task 6:
 const apiKey = 'ad80d84778f0cf5c625cb210b95e4b76'; 
@@ -99,7 +88,6 @@ fetch(apiUrl)
 .catch((error)=>{
   console.error('There was a problem with the fetch operation:',error);
 });
-
 // Task 7:
 console.log("Data fetching useing async await")
 const fetchNews = async() => {
@@ -118,7 +106,6 @@ const fetchNews = async() => {
         console.error("Network error:", error)
     }
 }
-
 // Acitivity 5:
 // Task 8:
 const promise1 = new Promise((resolve) => setTimeout(() => resolve('Result 1'), 1000))
@@ -132,7 +119,6 @@ Promise.all([promise1, promise2, promise3])
 .catch((error) => {
     console.log('One of the promise failed:', error)
 })
-
 // Task 9:
 const promise4 = new Promise((resolve) => setTimeout(() => resolve('Result 4'), 3000))
 const promise5 = new Promise((resolve) => setTimeout(() => resolve('Result 5'), 1000))
