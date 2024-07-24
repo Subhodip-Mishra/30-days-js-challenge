@@ -113,3 +113,64 @@ getRandomPromise()
     }).catch((error) => {
         console.log(error)
     })
+
+// Task 7:
+function RandomPromise() {
+    return new Promise((resolve, reject) => {
+        const randomoutput = Math.random() > 0.5
+
+        setTimeout(() => {
+            if (randomoutput) {
+                resolve("Promise resolve successfully")
+            } else {
+                reject("Promise rejected")
+            }
+        }, 1500);
+
+    },)
+}
+
+async function RandomPromise() {
+    try {
+        const result = await RandomPromise()
+        console.log(result)
+    } catch (error) {
+        console.log('An error occurred', error.message)
+    }
+}
+RandomPromise()
+
+// Activity 5:
+// Task 8:
+function fetchDatafromInvalidUrl() {
+    return fetch('https://invalid-url.example.com/data')
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Http error')
+            }
+            return res.json()
+        }).then(data => {
+            console.log(data)
+        }).catch(error => {
+            console.error('An error occurred', error.message)
+        })
+}
+
+fetchDatafromInvalidUrl()
+
+// Task 9:
+async function fetchData() {
+    try {
+        const result = await fetch('https://invalid-url.example.com/data')
+
+        if (!result.ok) {
+            throw new Error('Http error')
+        }
+        const data = await result.json()
+        console.log("Data fetched successfully ", data)
+    } catch (error) {
+        console.error('An error occurred', error.message)
+    }
+}
+
+fetchData()
