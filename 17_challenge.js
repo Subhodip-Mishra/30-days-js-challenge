@@ -374,7 +374,6 @@ graph.addEdge('C', 'E');
 graph.addEdge('D', 'E');
 
 console.log('BFS from A:', graph.bfs('A')); 
-
 const path = graph.shortestPath('A', 'E');
 console.log('Shortest path from A to E:', path); 
 
